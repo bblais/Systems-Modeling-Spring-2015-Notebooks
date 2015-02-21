@@ -68,10 +68,10 @@ plot(t_data,y_data,'o')
 
 # <codecell>
 
-y=2
+y=.1
 t=0
 
-constant=.06
+constant=.2
 dt=0.01
 
 # <codecell>
@@ -79,7 +79,7 @@ dt=0.01
 reset()
 
 store(t,y)
-for i in range(9000):
+for i in range(4000):
     dy=constant*y*dt
     
     y=y+dy
@@ -96,6 +96,13 @@ t,y=recall()
 
 plot(t,y)
 plot(t_data,y_data,'o')
+
+# <codecell>
+
+y
+
+# <codecell>
+
 
 # <codecell>
 
