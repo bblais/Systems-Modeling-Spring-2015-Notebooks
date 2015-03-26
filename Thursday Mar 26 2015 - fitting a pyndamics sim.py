@@ -35,4 +35,26 @@ sim.run(0,20)
 
 # <codecell>
 
+model.plot_distributions()
+
+# <markdowncell>
+
+# ## Fitting the initial value
+
+# <codecell>
+
+model=MCMCModel(sim,
+            a=Uniform(-1,1),
+            initial_y=Uniform(-5,10),  # a nice wide range
+            )
+model.run_mcmc(500)
+model.plot_chains()
+
+# <codecell>
+
+sim.run(0,20)
+model.plot_distributions()
+
+# <codecell>
+
 
