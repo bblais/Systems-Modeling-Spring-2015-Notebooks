@@ -56,4 +56,8 @@ sim.mse('L')
 
 # <codecell>
 
+phase_plot(sim,'H','L')
+
+# <codecell>
+
 
