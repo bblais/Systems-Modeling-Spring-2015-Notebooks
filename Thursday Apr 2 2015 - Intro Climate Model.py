@@ -1,22 +1,22 @@
-# -*- coding: utf-8 -*-
-# <nbformat>3.0</nbformat>
 
-# <codecell>
+# coding: utf-8
+
+# In[1]:
 
 from pyndamics import *
 
-# <markdowncell>
 
 # ## No atmosphere
 
-# <codecell>
+# In[2]:
 
 sim=Simulation()
 sim.add("Es'=C*(100-0.3*100-Es)",1,plot=True)
 sim.params(C=1)
 sim.run(0,50)
 
-# <codecell>
+
+# In[23]:
 
 sim=Simulation()
 sim.add("Es'=C*(100-albedo*100-Es)",1,plot=True)
@@ -24,15 +24,15 @@ sim.add("Ts=88.5*Es**0.25-273",plot=True)
 sim.params(C=1,albedo=0.3)
 sim.run(0,50)
 
-# <codecell>
+
+# In[24]:
 
 sim.Ts[-1]
 
-# <markdowncell>
 
 # ## With an atmosphere, complete absorption of the surface energy
 
-# <codecell>
+# In[15]:
 
 sim=Simulation()
 sim.add("Es'=C1*(100-albedo*100+Ea-Es)",1,plot=1)
@@ -42,15 +42,15 @@ sim.add("Ta=88.5*Ea**0.25-273",plot=2)
 sim.params(C1=1,C2=10,albedo=0.3)
 sim.run(0,50)
 
-# <codecell>
+
+# In[16]:
 
 sim.Ts[-1]
 
-# <markdowncell>
 
 # ## With partial absorption
 
-# <codecell>
+# In[17]:
 
 sim=Simulation()
 sim.add("Es'=C1*(100-albedo*100+Ea-Es)",1,plot=1)
@@ -60,15 +60,15 @@ sim.add("Ta=88.5*Ea**0.25-273",plot=2)
 sim.params(C1=1,C2=10,albedo=0.3,g=0.9)
 sim.run(0,50)
 
-# <codecell>
+
+# In[18]:
 
 sim.Ts[-1]
 
-# <markdowncell>
 
 # what happens if g=0?
 
-# <codecell>
+# In[20]:
 
 sim=Simulation()
 sim.add("Es'=C1*(100-albedo*100+Ea-Es)",1,plot=1)
@@ -78,10 +78,13 @@ sim.add("Ts=88.5*Es**0.25-273",plot=2)
 sim.params(C1=1,C2=10,albedo=0.3,g=0.0)
 sim.run(0,50)
 
-# <codecell>
+
+# In[22]:
 
 sim.Ts[-1]
 
-# <codecell>
+
+# In[ ]:
+
 
 
